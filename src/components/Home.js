@@ -40,6 +40,20 @@ function Home() {
                 leftBtnText="Order now"
                 rightBtnText="Learn More"
             />
+            <Section
+                title="Solar for New Roofs"
+                description="Solar Roof Costs Less than a New Roof Plus Solar Panels"
+                backgroundImg="solar-roof.jpg"
+                leftBtnText="Order now"
+                rightBtnText="Learn More"
+            />
+            <Section
+                title="Accessories"
+                description=""
+                backgroundImg="accessories.jpg"
+                leftBtnText="Shop now"
+                // rightBtnText="Learn More"
+            />
         </Container>
     );
 }
@@ -48,4 +62,5 @@ export default Home;
 
 const Container = styled.div`
     height: 100vh;
+    z-index: 10;
 `;

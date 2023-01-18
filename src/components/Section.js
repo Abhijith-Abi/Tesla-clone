@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Fade from "react-reveal/Fade";
 
 function Section({
     title,
@@ -11,15 +12,22 @@ function Section({
     console.log();
     return (
         <Wrap bgImage={backgroundImg}>
-            <ItemText>
-                <MainHead>{title}</MainHead>
-                <SubHead>{description}</SubHead>
-            </ItemText>
+            <Fade bottom>
+                {/* react reveal plug in */}
+                <ItemText>
+                    <MainHead>{title}</MainHead>
+                    <SubHead>{description}</SubHead>
+                </ItemText>
+            </Fade>
             <Buttons>
-                <ButtonGroup>
-                    <LeftButton>{leftBtnText}</LeftButton>
-                    <RightButton>{rightBtnText}</RightButton>
-                </ButtonGroup>
+                <Fade bottom>
+                    <ButtonGroup>
+                        <LeftButton>{leftBtnText}</LeftButton>
+                        {rightBtnText && (
+                            <RightButton>{rightBtnText}</RightButton>
+                        )}
+                    </ButtonGroup>
+                </Fade>
                 <DownArrow src="/images/down-arrow.svg" />
             </Buttons>
         </Wrap>
@@ -46,6 +54,7 @@ const Wrap = styled.div`
 const ItemText = styled.div`
     text-align: center;
     padding-top: 15vh;
+    z-index: -1;
 `;
 const MainHead = styled.h1``;
 const SubHead = styled.p``;
